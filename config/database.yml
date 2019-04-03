@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  
+development:
+  <<: *default
+  database: kadai-ig_development
+
+test:
+  <<: *default
+  database: kadai-ig_test
+
+production:
+  <<: *default
+  database: kadai-ig_production
+  username: kadai-ig
+  password: <%= ENV['KADAI-IG_DATABASE_PASSWORD'] %>
