@@ -1,0 +1,15 @@
+img#favorite {
+  border-radius: 0%;
+  width: 250px;
+  height: 250px;
+}
+
+.grid {
+  display: inline-block;
+}
+
+.favorite_index {
+  margin-top: 250px;
+  margin-left: 100px;
+}
+

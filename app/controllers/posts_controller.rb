@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	before_action :set_post, only: [:show, :edit, :update, :destroy]
+	before_action :set_post, only: [:show, :edit, :update, :destroy ]
 	
 	def index
 		@posts = Post.all.order(id: "DESC") 
@@ -14,6 +14,7 @@ class PostsController < ApplicationController
 	end
 	
 	def show
+		@favorite = current_user.favorites.find_by(post_id: @post.id)
 	end	
 	
 	def confirm

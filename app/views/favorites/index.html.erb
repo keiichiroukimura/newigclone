@@ -1,0 +1,8 @@
+
+<div class = "favorite_index">
+  <% @favorites.each do |favorite| %>
+    <div class= "grid">
+      <%= image_tag favorite.post.image.url, id: "favorite" %>
+    </div>
+  <% end %>
+</div>
