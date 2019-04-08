@@ -1,0 +1,26 @@
+  <div class="card_show" style="width: 50rem;">
+    <div class="card-header">
+      <%= image_tag(@post.user.image.url,id: "post_image") %>
+    <div id = "index_name"> 
+      <%= @post.user.name %>
+    </div>
+    <div class="card-body">
+      <%= image_tag @post.image.to_s, id: "index_picture" %>
+    </div>
+    <div class="card-footer">
+        <i class="far fa-bookmark fa-2x ", style = "margin-left: 10px; margin-top: 5px; float: left "></i>
+        <div class = "edit">
+          <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-default" %>
+          <%= link_to 'Destroy',@post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+          <%= link_to 'Back', posts_path , class: "btn btn-default" %>
+          <i class="fas fa-trash-alt fa-2x", style = "margin-right: 10px; float: right; "></i> 
+        </div>
+        <br>
+      <div id = "comment">
+        <%= "コメント" %>
+      </div>     
+      <div id = "content">
+        <%= simple_format(@post.content) %>
+      </div>
+    </div>
+  </div>

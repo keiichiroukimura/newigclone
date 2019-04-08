@@ -1,0 +1,30 @@
+<% @posts.each do |post| %>
+  <div class="card" style="width: 50rem;">
+    <div class="card-header">
+      <%= image_tag(post.user.image.url,id: "post_image") %>
+    <div id = "index_name"> 
+      <%= post.user.name %>
+    </div>
+    <div class="card-body">
+      <%= image_tag post.image.to_s, id: "index_picture" %>
+    </div>
+    <div class="card-footer" style="height: 1rem;">
+        <i class="far fa-bookmark fa-2x ", style = "margin-left: 10px; margin-top: 5px; float: left "></i>
+          <% if post.user_id == current_user.id %>  
+            <%= link_to 'Show', post, class: "btn btn-default ", id: "show" %>
+          <% end %>  
+        <br>
+      <div id = "comment">
+        <%= "コメント" %>
+      </div>     
+      <div id = "content">
+        <%= simple_format(post.content) %>
+      </div>
+    </div>
+  </div>
+<% end %>
+  
+  
+  
+  
+  

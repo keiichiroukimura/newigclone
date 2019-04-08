@@ -3,15 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #mypage {
 	text-align: center;
-	margin-top: px;
   padding: 0.5em 1em;
-  margin: 4em 0;
+  margin: 5em 0;
   color: black;
   background: white;
-  border-top: solid 5px #f5f5f5f5;
 	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 	width: 700px;
 	margin-left: 350px;
+	margin-top: 150px;
 }
 
 h2 {
@@ -42,16 +41,13 @@ label {
 
 .field {
 	text-align: center;
-	margin-top: px;
   padding: 0.5em 1em;
-  margin: 4em 0;
+  margin: 12em 0;
   color: black;
   background: white;
-  border-top: solid 5px #f5f5f5f5;
 	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 	width: 700px;
 	margin-left: 350px;
-
 }
 
 input[type="file"] {
@@ -64,19 +60,21 @@ textarea.form-control {
 }
 
 #signup {
-		margin-top: px;
-    padding: 0.5em 1em;
-    margin: 4em 0;
-    color: black;
-    background: white;
-    border-top: solid 5px #f5f5f5f5;
-		box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
-		width: 400px;
-		margin-left: 500px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 500px;
+	padding: 0.5em 1em;
+	margin: 4em 0;
+	color: black;
+	background: white;
+	border-top: solid 5px #f5f5f5f5;
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+	width: 400px;
+	margin-left: 500px;
+	margin-top: 180px;
 }
 
 .image {
-
 	margin: 0 auto;
 	margin-top: 50px;
 }
@@ -96,4 +94,10 @@ img {
 .well.well-sm {
 	width: 250px;
 	margin: 0 auto;
+}
+
+#my-image {
+	margin-left: 35px;
+	margin-top: 40px;
+	float: left;
 }

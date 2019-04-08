@@ -15,7 +15,9 @@
     <%= link_to(posts_path) do%>
     <i class="fab fa-instagram fa-2x" style = "margin-top: 5px; margin-left: 250px;"></i>
     <% end %>
+    <%= link_to (user_path(current_user.id)) do %>
     <i class="far fa-user fa-2x" style = "margin-left:800px;" ></i>
+    <% end %>
     <section id = "logged_in">
       <% if logged_in? %>
         <%= link_to "My page", user_path(current_user.id), class: 'btn btn-default'%>
@@ -25,7 +27,8 @@
         <%= link_to "Login", new_session_path, class: 'btn btn-default'%>
       <% end %>
     </section>
-  </header>
+    <%= link_to "新規投稿", new_post_path(current_user.id), class: 'btn btn-default', id:"new_post" %>
+    </header>
     
     <section id = "log_in_error">
       <% flash.each do |key, value| %>

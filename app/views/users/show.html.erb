@@ -1,20 +1,16 @@
 <section id = "mypage">
-		<%= image_tag (@user.image.url) if @user.image && @user.image.url  %>
+		<%= image_tag(@user.image.url, id: "my-image") if @user.image && @user.image.url  %>
 		<br>
 	<div class="form-group">
-		<%= "name" %>
-		<div class="well well-sm">
-		<%= @user.name %>
-		</div>
+		<div style="margin-right: 140px;"><%= "name" %></div>
+		<div class="well well-sm"><%= @user.name %></div>
 	</div>
 	<div class="form-group">
-		<%= "メールアドレス"%>
-		<br>
+	<div style="margin-right: 140px;"><%= "メールアドレス"%></div>
 		<div class="well well-sm">
 		<%= @user.email  %>
 		</div>
 	</div>
-		<br>
 	<div class="form-group">
 		<%= "自己紹介" %>
 		<br>
@@ -23,9 +19,7 @@
 		</div>
 	</div>	
 		<br>
-		<% if current_user.id == @user.id %>
-			<%= link_to 'プロフィール編集', edit_user_path(@user), class:"btn btn-default" %>
-		<% elsif %>
-			<%= link_to '一覧', edit_user_path(@user), class:"btn btn-default" %>
-		<% end %>
+		<%= link_to 'プロフィール編集', edit_user_path(@user), class:"btn btn-default" %>
+		<%= link_to '一覧', posts_path, class:"btn btn-default" %>
 </section>
+
