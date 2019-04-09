@@ -1,7 +1,9 @@
 class FavoritesController < ApplicationController
 
-  def index
-		@favorites = Favorite.all.order(id: "DESC") 
+  def index 
+    @user = current_user
+    @favorites = Favorite.where(user_id: @user.id).all
+    # @favorites = Favorite.all.order(id: "DESC")
 	end
   def create
     favorite = current_user.favorites.create(post_id: params[:post_id])

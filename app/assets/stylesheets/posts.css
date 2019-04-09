@@ -64,3 +64,14 @@
 .well.well-sm.check {
   font-size: 10px;
 }
+
+a.btn.btn-default.index {
+  float: right;
+  margin-top: -20px;
+  margin-right: 250px;
+}
+
+.fa-instagram:before {
+  content: "\f16d";
+  margin-top: 20px;
+}

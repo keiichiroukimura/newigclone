@@ -9,7 +9,11 @@ img#favorite {
 }
 
 .favorite_index {
-  margin-top: 250px;
+  margin-top: 50px;
   margin-left: 100px;
 }
 
+.mine {
+  margin-top: 100px;
+  text-align: center;
+}
