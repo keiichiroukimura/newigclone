@@ -18,18 +18,34 @@ class PostsController < ApplicationController
 	end	
 	
 	def confirm
-		@post = current_user.posts.build(post_params)
+		@post = Post.new(post_params)
+    @post.user_id = current_user.id
+		render :new if @post.invalid?
 	end
 
+	def edit 
+	end
+	
 	def create
-		@post = current_user.posts.build(post_params)
+		@post = Post.new(post_params)
+    @post.user_id = current_user.id
 		if @post.save
+			flash[:success] = "新規投稿。"
 			redirect_to posts_path
 		else
 			render 'new'
 		end
 	end
 	
+	def update
+		@post.user_id == current_user.id
+		if @post.update(post_params)
+			redirect_to posts_path
+		else
+			render 'edit'
+		end
+	end 
+
 	def destroy
 		@post.destroy
     flash[:danger] = "投稿を削除しました。"

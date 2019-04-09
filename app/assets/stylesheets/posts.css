@@ -60,3 +60,7 @@
   padding-left: 70px;
   font-size: 20px;
 }
+
+.well.well-sm.check {
+  font-size: 10px;
+}
