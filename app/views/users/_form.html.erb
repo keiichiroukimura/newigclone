@@ -1,5 +1,5 @@
 <%= form_with(model: @user, local: true) do |form| %>
-	<div class="field">
+	<div id="field">
 		<div class="image"  > 
 			<%= image_tag(@user.image.url) if @user.image && @user.image.url %>
 			<%= form.file_field :image %>

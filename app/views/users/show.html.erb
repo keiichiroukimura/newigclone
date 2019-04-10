@@ -1,5 +1,10 @@
 <section id = "mypage">
-		<%= image_tag(@user.image.url, id: "my-image") if @user.image && @user.image.url  %>
+	<% if @user.image.nil? %>
+		<%= image_tag "default.jpg"%>
+	<% else %>
+  	<%= image_tag(@user.image.url, id: "my-image") if @user.image && @user.image.url  %>
+	<% end %>
+		
 		<br>
 	<div class="form-group">
 		<div style="margin-right: 140px;"><%= "name" %></div>

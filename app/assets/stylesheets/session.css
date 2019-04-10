@@ -14,12 +14,12 @@ input.btn.btn-default {
 }
 
 label {
-	margin-top : 20px;
+	margin-top : 100px;
 }
 
 #login {
   text-align: center;
-  margin-top: px;
+  margin-top: 150px;
   padding: 0.5em 1em;
   margin: 4em 0;
   color: black;
@@ -28,6 +28,10 @@ label {
 	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 	width: 400px;
 	margin-left: 500px;
+}
+
+section#login {
+	margin-top: 150px;
 }
 
 p {

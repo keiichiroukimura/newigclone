@@ -1,1 +1,10 @@
-<%= render 'form', post: @post %>
+<%= form_with(model: @post, local: true) do |form| %>
+	<div id = "field">
+		<%= image_tag(@post.image.url, id: "index_picture" ) if @post.image && @post.image.url %>
+		<%= form.file_field :image %>
+		<%= form.label :コメント %>
+		<%= form.text_area :content, class: 'form-control' %>
+		<%= form.submit "確認",class: 'btn btn-default'%>
+		<%= link_to 'Back', posts_path, class: 'btn btn-default' %>
+	</div>
+<% end %>

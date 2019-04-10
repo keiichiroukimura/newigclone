@@ -1,10 +1,11 @@
-
-
 <% @posts.each do |post| %>
- 
   <div class="card" style="width: 50rem;">
     <div class="card-header">
-      <%= image_tag(post.user.image.url,id: "post_image") %>
+      <% if post.user.image.nil? %>
+        <%= image_tag "default.jpg" %>
+      <% else %>
+      <%= image_tag(post.user.image.url, id: "post_image") if post.user.image && post.user.image.url  %>
+      <% end %>
     <div id = "index_name"> 
       <%= post.user.name %>
     </div>
@@ -22,7 +23,6 @@
       </div>
     </div>
   </div>
-  
 <% end %>
 
   
