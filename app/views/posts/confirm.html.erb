@@ -7,7 +7,7 @@
       <%= form.label :コメント %>
       <%= form.hidden_field :content %>
     <div class = "well well-sm check" style = "text-align: center;">
-      <%= simple_format(@post.content) %>
+      <pre><%= simple_format(@post.content) %></pre>
     </div>
       <br>
       <%= form.submit "投稿する",class: 'btn btn-default' %>

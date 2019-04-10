@@ -1,8 +1,10 @@
-<p class = "mine">お気に入り一覧</p>
-<div class = "favorite_index">
-  <% @favorites.each do |favorite| %>
-    <div class= "grid">
-      <%= image_tag favorite.post.image.url, id: "favorite" %>
-    </div>
-  <% end %>
+<div class="container-fluid">
+  <p class = "mine">お気に入り一覧</p>
+  <div class = "favorite_index">
+    <% @favorites.each do |favorite| %>
+      <div class= "grid">
+        <%= image_tag favorite.post.image.url, id: "favorite" %>
+      </div>
+    <% end %>
+  </div>
 </div>
