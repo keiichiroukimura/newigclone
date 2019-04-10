@@ -41,6 +41,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'pry-byebug'
   gem 'better_errors'
+  gem 'dotenv-rails'
 end
 
 group :development do
