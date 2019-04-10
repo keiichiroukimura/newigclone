@@ -1,10 +1,11 @@
 class FavoritesController < ApplicationController
-  # skip_before_action :login_required
+  skip_before_action :login_required
+  
   def index 
     @user = current_user
     @favorites = Favorite.where(user_id: @user.id).all
-    # @favorites = Favorite.all.order(id: "DESC")
 	end
+  
   def create
     favorite = current_user.favorites.create(post_id: params[:post_id])
     redirect_to posts_url, notice: "#{favorite.post.user.name}さんのブログをお気に入り登録しました"

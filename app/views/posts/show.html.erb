@@ -7,6 +7,7 @@
       <div class="card-body">
         <%= image_tag @post.image.to_s, id: "index_picture" %>
       </div>
+      
       <div class="card-footer">
         <% if @post.user_id == current_user.id %>  
           <div class = "edit">
@@ -14,21 +15,21 @@
             <%= link_to 'Destroy',@post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
         <% end %>
             <%= link_to 'Back', posts_path , class: "btn btn-default" %>
-      </div>
+          </div>
         
-      <% unless @post.user_id == current_user.id %>
-        <% if @favorite.present? %>
-          <%= link_to 'お気に入り解除', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-default' %>
-        <% else %>
-          <%= link_to 'お気に入り', favorites_path(post_id: @post.id), method: :post, class: 'btn btn-primary' %>
+        <% unless @post.user_id == current_user.id %>
+          <% if @favorite.present? %>
+            <%= link_to 'お気に入り解除', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-default' %>
+          <% else %>
+            <%= link_to 'お気に入り', favorites_path(post_id: @post.id), method: :post, class: 'btn btn-primary' %>
+          <% end %>
         <% end %>
-      <% end %>
         <br>
-      <div id = "comment">
-        <%= "コメント" %>
-      </div>     
-      <div id = "content">
-        <%= simple_format(@post.content) %>
+        <div id = "comment">
+          <%= "コメント" %>
+        </div>     
+        <div id = "content">
+          <%= simple_format(@post.content) %>
+        </div>
       </div>
-  </div>
 </div>

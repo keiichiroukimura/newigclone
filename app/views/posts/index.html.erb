@@ -6,9 +6,10 @@
       <% else %>
       <%= image_tag(post.user.image.url, id: "post_image") if post.user.image && post.user.image.url  %>
       <% end %>
-    <div id = "index_name"> 
-      <%= post.user.name %>
-    </div>
+        <div id = "index_name"> 
+          <%= post.user.name %>
+        </div>
+    
     <div class="card-body">
       <%= image_tag post.image.to_s, id: "index_picture" %>
     </div>

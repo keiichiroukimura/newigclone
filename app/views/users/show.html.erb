@@ -3,15 +3,14 @@
 		<%= image_tag "default.jpg"%>
 	<% else %>
   	<%= image_tag(@user.image.url, id: "my-image") if @user.image && @user.image.url  %>
-	<% end %>
-		
+	<% end %>		
 		<br>
 	<div class="form-group">
 		<div style="margin-right: 140px;"><%= "name" %></div>
 		<div class="well well-sm"><%= @user.name %></div>
 	</div>
 	<div class="form-group">
-	<div style="margin-right: 140px;"><%= "メールアドレス"%></div>
+		<div style="margin-right: 140px;"><%= "メールアドレス"%></div>
 		<div class="well well-sm">
 		<%= @user.email  %>
 		</div>
@@ -20,7 +19,7 @@
 		<%= "自己紹介" %>
 		<br>
 		<div class="well well-sm">
-		<pre><%= simple_format(@user.content) %></pre>
+			<pre><%= simple_format(@user.content) %></pre>
 		</div>
 	</div>	
 		<br>
