@@ -29,9 +29,7 @@
               <%= link_to "Sign up", new_user_path, class: 'btn btn-default prof' %>
               <%= link_to "Login", new_session_path, class: 'btn btn-default prof'%>
             <% end %>   
-          
-          
-            
+                      
             <section id = "log_in_error">
               <% flash.each do |key, value| %>
                 <%= content_tag(:div, value, class: "#{key}") %>
