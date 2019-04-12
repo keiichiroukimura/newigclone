@@ -30,12 +30,12 @@ class UsersController < ApplicationController
 	end
   
   private
-	
-	def user_params
+  
+  def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :image, :image_cache, :content, :image_name)
   end
 	
-	def set_user
-		@user = User.find(params[:id])
-	end
+  def set_user
+    @user = User.find(params[:id])
+  end
 end
