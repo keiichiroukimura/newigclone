@@ -9,12 +9,14 @@
         <div id = "index_name"> 
           <%= post.user.name %>
         </div>
+    </div>
     
     <div class="card-body">
       <%= image_tag post.image.to_s, id: "index_picture" %>
     </div>
+    
     <div class="card-footer" style="height: 1rem;">
-    <%= link_to 'Show', post, class: "btn btn-default ", id: "show" %>
+      <%= link_to 'Show', post, class: "btn btn-default ", id: "show" %>
         <br>
       <div id = "comment">
         <%= "コメント" %>
@@ -25,9 +27,3 @@
     </div>
   </div>
 <% end %>
-
-  
-  
-  
-  
-  
