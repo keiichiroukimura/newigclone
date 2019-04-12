@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 	before_action :set_user, only: [:edit, :update, :show]
   skip_before_action :login_required, only: [:new, :create]
+  
   def new
     @user = User.new
   end
@@ -15,17 +16,14 @@ class UsersController < ApplicationController
     end
   end
   
-  def show
-  end
+  def show;end
   
-  def edit
-	end
+  def edit;end
 	
   def update
     if @user.update(user_params)
       redirect_to user_path(@user.id), notice: 'プロフィール編集しました'
     else
-      
       flash.now[:danger] = '入力に不備があります'
       render :edit
     end

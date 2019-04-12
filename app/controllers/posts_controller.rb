@@ -23,8 +23,7 @@ class PostsController < ApplicationController
 		render :new if @post.invalid?
 	end
 
-	def edit 
-	end
+	def edit;end
 	
 	def create
 		@post = Post.new(post_params)
