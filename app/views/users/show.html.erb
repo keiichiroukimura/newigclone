@@ -1,28 +1,30 @@
 <section id = "mypage">
-	<% if @user.image.nil? %>
-		<%= image_tag "default.jpg"%>
-	<% else %>
-		<%= image_tag(@user.image.url, id: "my-image") if @user.image && @user.image.url  %>
-	<% end %>		
-		<br>
-	<div class="form-group">
-		<div style="margin-right: 140px;"><%= "name" %></div>
-		<div class="well well-sm"><%= @user.name %></div>
-	</div>
-	<div class="form-group">
-		<div style="margin-right: 140px;"><%= "メールアドレス"%></div>
-		<div class="well well-sm">
-		<%= @user.email  %>
-		</div>
-	</div>
-	<div class="form-group">
-		<%= "自己紹介" %>
-		<br>
-		<div class="well well-sm">
-			<pre><%= simple_format(@user.content) %></pre>
-		</div>
-	</div>	
-		<br>
-		<%= link_to 'プロフィール編集', edit_user_path(@user), class:"btn btn-default" %>
+  <% if @user.image.nil? %>
+    <%= image_tag "default.jpg"%>
+  <% else %>
+    <%= image_tag(@user.image.url, id: "my-image") if @user.image && @user.image.url  %>
+  <% end %>		
+  <br>
+  <div class="form-group">
+    <div style="margin-right: 140px;"><%= "name" %></div>
+    <div class="well well-sm"><%= @user.name %></div>
+  </div>
+
+  <div class="form-group">
+    <div style="margin-right: 140px;"><%= "メールアドレス"%></div>
+    <div class="well well-sm">
+      <%= @user.email  %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= "自己紹介" %>
+    <br>
+    <div class="well well-sm">
+      <pre><%= simple_format(@user.content) %></pre>
+    </div>
+  </div>	
+    <br>
+    <%= link_to 'プロフィール編集', edit_user_path(@user), class:"btn btn-default" %>
 </section>
 
