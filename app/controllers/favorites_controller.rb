@@ -1,5 +1,4 @@
 class FavoritesController < ApplicationController
-  skip_before_action :login_required
   
   def index 
     @user = current_user
