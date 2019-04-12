@@ -35,7 +35,7 @@ class PostsController < ApplicationController
       render 'new'
     end
   end
-	
+
   def update
     @post.user_id == current_user.id
     if @post.update(post_params)
