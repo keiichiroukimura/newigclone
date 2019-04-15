@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy ]
+  before_action :ensure_correct_user,{only: [:edit, :update,:destroy,]}
   def index
     @posts = Post.all.order(id: "DESC") 
   end
@@ -59,5 +60,11 @@ class PostsController < ApplicationController
 	
   def post_params
     params.require(:post).permit(:image, :image_cache, :content, :user_id)
+  end
+
+  def ensure_correct_user
+    if @post.user_id != current_user.id
+      redirect_to posts_path 
+    end
   end
 end
