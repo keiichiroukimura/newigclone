@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy ]
-	
   def index
     @posts = Post.all.order(id: "DESC") 
   end
@@ -31,6 +30,7 @@ class PostsController < ApplicationController
     if @post.save
       flash[:success] = "新規投稿。"
       redirect_to posts_path
+      SendMailer.send_mail(@post).deliver 
     else
       render 'new'
     end
